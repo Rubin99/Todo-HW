@@ -1,6 +1,7 @@
-package com.example.todoappcw;
+package com.example.todoappcw.data;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -9,24 +10,26 @@ import java.util.Date;
 
 @Entity(tableName = "Tasks")
 public class Task {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
     @NonNull
     private  String title;
     private String description;
     private int priority;
+    @ColumnInfo(name = "created date")
     private Date createdDate;
 
-    public Task(int id, String title, String description, int priority, Date createdDate) {
-        this.id = id;
+    public Task(String title, String description, int priority, Date createdDate) {
         this.title = title;
         this.description = description;
         this.priority = priority;
         this.createdDate = createdDate;
     }
+
     @Ignore
-    public Task(String title, String description, int priority, Date createdDate) {
+    public Task(int id, String title, String description, int priority, Date createdDate) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.priority = priority;

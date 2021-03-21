@@ -1,4 +1,4 @@
-package com.example.todoappcw;
+package com.example.todoappcw.data;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -7,9 +7,11 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.todoappcw.data.Task;
+
 import java.util.List;
 @Dao
-interface TodoDao {
+public interface TodoDao {
 
     @Query("Select * from Tasks order by priority")
     public List<Task> getAllTasks();
