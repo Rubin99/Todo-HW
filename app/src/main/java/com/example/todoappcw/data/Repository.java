@@ -2,6 +2,8 @@ package com.example.todoappcw.data;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+
 import java.util.List;
 
 public class Repository {
@@ -24,7 +26,7 @@ public class Repository {
 
     //Methods from TodoDao
 
-    public List<Task> getAllTask(){
+    public LiveData<List<Task>> getAllTask(){
         return dao.getAllTasks();
     }
 

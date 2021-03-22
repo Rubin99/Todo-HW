@@ -15,9 +15,14 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private List<Task> data;
-    public TaskAdapter(List<Task> tasks){ data = tasks; }
+    public TaskAdapter(){
 
-    public void setData(List<Task> tasks) { data = tasks; }
+    }
+
+    public void setData(List<Task> tasks) {
+        data = tasks;
+        notifyDataSetChanged();
+    }
 
 
     @NonNull

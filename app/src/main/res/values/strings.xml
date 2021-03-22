@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TodoAppCW</string>
+    <string name="enter_title">Enter title</string>
+    <string name="title_label">Title:</string>
+    <string name="desc_label">Description:</string>
+    <string name="enter_description">Enter description</string>
+    <string name="submit">Submit</string>
 </resources>
