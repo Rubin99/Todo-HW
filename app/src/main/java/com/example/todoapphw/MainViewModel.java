@@ -1,4 +1,4 @@
-package com.example.todoappcw;
+package com.example.todoapphw;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.todoappcw.data.Repository;
-import com.example.todoappcw.data.Task;
+import com.example.todoapphw.data.Repository;
+import com.example.todoapphw.data.Task;
 
 import java.util.List;
 

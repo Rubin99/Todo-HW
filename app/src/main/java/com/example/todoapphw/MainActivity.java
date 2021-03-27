@@ -1,20 +1,15 @@
-package com.example.todoappcw;
+package com.example.todoapphw;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import com.example.todoappcw.data.AppDatabase;
-import com.example.todoappcw.data.Repository;
-import com.example.todoappcw.data.Task;
-import com.example.todoappcw.data.TodoDao;
+import com.example.todoapphw.data.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;

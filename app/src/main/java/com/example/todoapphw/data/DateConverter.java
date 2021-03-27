@@ -1,11 +1,8 @@
-package com.example.todoappcw.data;
-
-import android.util.Log;
+package com.example.todoapphw.data;
 
 import androidx.room.TypeConverter;
 
 import java.util.Date;
-import java.util.List;
 
 public class DateConverter {
     @TypeConverter
