@@ -3,6 +3,9 @@ package com.example.todoapphw;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -16,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemClickListener {
 
     private static final  String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
@@ -31,7 +34,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.task_list);
-        adapter = new TaskAdapter();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        adapter = new TaskAdapter(this, this);
+        recyclerView.setAdapter(adapter);
+
+        DividerItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(decoration);
 
 //        repository = Repository.getRepository(this.getApplication());
 //        List<Task> tasks = repository.getAllTask();
@@ -44,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //adapter = new TaskAdapter(tasks);
-        recyclerView.setAdapter(adapter);
+
+
 
         addButton = findViewById(R.id.add_btn);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
- //   @Override
+
+    @Override
+    public void onItemClickListener(int itemId) {
+
+    }
+    //   @Override
   //  protected  void onStart() {
    //     super.onStart();
     //    tasks = viewModel.getAllTasks();
