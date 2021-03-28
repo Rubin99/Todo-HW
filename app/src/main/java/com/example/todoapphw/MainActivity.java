@@ -1,5 +1,6 @@
 package com.example.todoapphw;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -56,9 +57,24 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         });
         //adapter = new TaskAdapter(tasks);
 
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int position = viewHolder.getAdapterPosition();
+            List<Task> todoList = adapter.getTasks();
+            viewModel.deleteTask(todoList.get(position));
+            }
 
 
-        addButton = findViewById(R.id.add_btn);
+        }).attachToRecyclerView(recyclerView);
+
+
+            addButton = findViewById(R.id.add_btn);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,10 +83,19 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             }
         });
 
+        viewModel.getAllTasks().observe(this, new Observer<List<Task>>() {
+            @Override
+            public void onChanged(List<Task> tasks) {
+adapter.setData(tasks);
+            }
+        });
     }
 
     @Override
     public void onItemClickListener(int itemId) {
+        Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
+        //intent.putExtra(AddTaskActivity.EXTRA_TASK_ID, itemId);
+        startActivity(intent);
 
     }
     //   @Override
