@@ -15,6 +15,9 @@ public interface TodoDao {
     @Query("Select * from Tasks order by priority")
     public LiveData<List<Task>> getAllTasks();
 
+    @Query("Select * from Tasks where id =:taskId")
+    public LiveData<List<Task>> loadtaskById(int taskId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insert(Task task);
 

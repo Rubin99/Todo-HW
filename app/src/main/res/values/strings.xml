@@ -19,4 +19,6 @@
     <string name="high_priority">High</string>
     <string name="med_priority">Medium</string>
     <string name="low_priority">Low</string>
+
+    <string name="update_button">Update</string>
 </resources>

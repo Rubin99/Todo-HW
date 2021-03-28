@@ -17,6 +17,8 @@ public class Repository {
         dao = db.todoDao();
     }
 
+
+
     public static Repository getRepository(Application application){
         if (INSTANCE == null){
             INSTANCE = new Repository(application);
@@ -29,6 +31,8 @@ public class Repository {
     public LiveData<List<Task>> getAllTask(){
         return dao.getAllTasks();
     }
+
+    public LiveData<List<Task>> getTaskById(int taskId){ return dao.loadtaskById(taskId); }
 
     public void deleteAll(){
         AppDatabase.databaseWriteExecutor.execute(new Runnable() {
