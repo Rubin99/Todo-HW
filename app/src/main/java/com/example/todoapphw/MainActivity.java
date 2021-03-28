@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.todoapphw.data.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,4 +62,7 @@ public class MainActivity extends AppCompatActivity {
     //    tasks = viewModel.getAllTasks();
      //   adapter.setData(tasks);
    // }
+
+
+
 }
