@@ -15,6 +15,7 @@ import java.util.concurrent.Executors;
 
 @Database(entities = {Task.class}, version = 1, exportSchema = false)
 @TypeConverters(DateConverter.class)
+
 public abstract class AppDatabase extends RoomDatabase{
     private static AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;

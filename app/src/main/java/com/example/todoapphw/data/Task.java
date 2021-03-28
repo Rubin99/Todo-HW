@@ -20,6 +20,8 @@ public class Task {
     @ColumnInfo(name = "created date")
     private Date createdDate;
 
+
+    @Ignore
     public Task(String title, String description, int priority, Date createdDate) {
         this.title = title;
         this.description = description;
@@ -27,7 +29,6 @@ public class Task {
         this.createdDate = createdDate;
     }
 
-    @Ignore
     public Task(int id, String title, String description, int priority, Date createdDate) {
         this.id = id;
         this.title = title;

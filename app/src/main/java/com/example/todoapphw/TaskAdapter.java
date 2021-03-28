@@ -1,5 +1,6 @@
 package com.example.todoapphw;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,7 +15,13 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private List<Task> data;
-    public TaskAdapter(){
+    final private ItemClickListener mItemClickListener;
+    private Context mContext;
+
+
+    public TaskAdapter(Context context, ItemClickLitsener litsener){
+        mContext = context;
+        mItemClickListener = listener;
 
     }
 

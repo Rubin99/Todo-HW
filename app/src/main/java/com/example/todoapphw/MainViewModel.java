@@ -26,4 +26,8 @@ public class MainViewModel extends AndroidViewModel {
         return tasks;
     }
 
+    public void deleteTask(Task task){
+        repository.delete(task);
+    }
+
 }

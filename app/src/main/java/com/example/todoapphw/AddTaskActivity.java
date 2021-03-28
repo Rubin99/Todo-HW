@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.todoapphw.data.Repository;
 import com.example.todoapphw.data.Task;
@@ -24,8 +25,14 @@ public class AddTaskActivity extends AppCompatActivity {
     private Button addButton;
     private Repository repository;
 
+    public static final int PRIORITY_HIGH = 1;
+    public static final int PRIORITY_MEDIUM = 2;
+    public static final int PRIORITY_LOW = 3;
+
     Calendar c;
     DatePickerDialog dpd;
+
+    RadioGroup mRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
