@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todoassignment.AddTaskFragment;
 import com.example.todoassignment.R;
 import com.example.todoassignment.database.Todo;
+import com.example.todoassignment.database.TodoRepository;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -36,6 +41,13 @@ public class TodoFragment extends Fragment {
 
     private TodoListAdapter adapter;
 
+    private EditText titleEditTExt;
+    private EditText descEditText;
+    private EditText setDate;
+    RadioGroup mRadioGroup;
+    private Button submitButton;
+    private TodoRepository repository;
+
 
 
     @Nullable
@@ -52,6 +64,10 @@ public class TodoFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fab = view.findViewById(R.id.add_btn);
+
+
+
+
 
         return view;
     }
@@ -86,6 +102,8 @@ public class TodoFragment extends Fragment {
                         .commitNow();
             }
         });
+
+
 
     }
 

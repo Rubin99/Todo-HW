@@ -17,10 +17,12 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
 
     class TodoViewHolder extends RecyclerView.ViewHolder {
         private final TextView todoItemView;
+        private final TextView todoDescView;
 
         private TodoViewHolder(View itemView) {
             super(itemView);
             todoItemView = itemView.findViewById(R.id.title_tv);
+            todoDescView = itemView.findViewById(R.id.description_tv);
         }
     }
 

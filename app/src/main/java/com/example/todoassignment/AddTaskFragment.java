@@ -38,7 +38,7 @@ public class AddTaskFragment extends Fragment {
     private EditText descEditText;
     private EditText setDate;
     RadioGroup mRadioGroup;
-    private Button addButton;
+    private Button submitButton;
     private TodoRepository repository;
 
     // TODO: Rename and change types and number of parameters
@@ -56,6 +56,10 @@ public class AddTaskFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }*/
+
+
+
+
     }
 
     @Override
@@ -65,10 +69,21 @@ public class AddTaskFragment extends Fragment {
         View view;
         view = inflater.inflate(R.layout.fragment_add_task, container, false);
 
-        titleEditTExt = view.findViewById(R.id.title_entry);
-        descEditText = view.findViewById(R.id.desc_entry);
-        mRadioGroup = view.findViewById(R.id.radioGroup);
-        addButton = view.findViewById(R.id.add_btn);
+        titleEditTExt = (EditText) view.findViewById(R.id.title_entry);
+        descEditText = (EditText) view.findViewById(R.id.desc_entry);
+        mRadioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        submitButton = (Button) view.findViewById(R.id.submit_btn);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = titleEditTExt.getText().toString();
+                String desc = descEditText.getText().toString();
+                Todo todo = new Todo(title, desc, 1);
+                repository.insert(todo);
+                //finish();
+            }
+        });
 
 
 
