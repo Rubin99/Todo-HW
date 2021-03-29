@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TodoMVVM</string>
+    <string name="no_todo">No Todo</string>
+</resources>
