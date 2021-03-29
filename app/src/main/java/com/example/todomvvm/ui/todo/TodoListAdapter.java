@@ -20,7 +20,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
 
         private TodoViewHolder(View itemView) {
             super(itemView);
-            todoItemView = itemView.findViewById(R.id.textView);
+            todoItemView = itemView.findViewById(R.id.title_tv);
         }
     }
 
