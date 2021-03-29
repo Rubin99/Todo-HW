@@ -13,8 +13,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todoassignment.AddTaskFragment;
 import com.example.todoassignment.R;
 import com.example.todoassignment.database.Todo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -26,7 +28,15 @@ public class TodoFragment extends Fragment {
         return new TodoFragment();
     }
 
+    public TodoFragment() {
+        // Required empty public constructor
+    }
+
+    private FloatingActionButton fab;
+
     private TodoListAdapter adapter;
+
+
 
     @Nullable
     @Override
@@ -41,6 +51,7 @@ public class TodoFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        fab = view.findViewById(R.id.add_btn);
 
         return view;
     }
@@ -62,6 +73,17 @@ public class TodoFragment extends Fragment {
             public void onChanged(@Nullable final List<Todo> todos) {
                 // Update the cached copy of the todos in the adapter.
                 adapter.setTodos(todos);
+            }
+        });
+
+        //switching between fragments
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, AddTaskFragment.newInstance())
+                        .commitNow();
             }
         });
 

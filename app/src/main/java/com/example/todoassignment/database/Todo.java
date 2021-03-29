@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
 /**
  * A basic class representing a one-column todo_database table.
  *
@@ -24,9 +26,14 @@ public class Todo {
     @ColumnInfo(name = "title")
     private String mTitle;
     private String mDetail;
+    private int mPriority;
+    //private Date setDate;
     
-    public Todo(@NonNull String title) {
+    public Todo(@NonNull String title, String detail, int priority) {
         this.mTitle = title;
+        this.mDetail = detail;
+        this.mPriority = priority;
+        //this.setDate = date;
     }
     public String getTitle() {
         return this.mTitle;
@@ -38,5 +45,11 @@ public class Todo {
     void setDetail(String mDetail) {
         this.mDetail = mDetail;
     }
+
+    int getPriority() {return this.mPriority;}
+    void setmPriority(int mPriority) { this.mPriority = mPriority;}
+
+    //Date getSetDat(){ return this.setDate;}
+   // void setSetDate(Date setDate) { this.setDate = setDate;}
 
 }
