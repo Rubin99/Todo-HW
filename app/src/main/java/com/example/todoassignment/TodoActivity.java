@@ -1,10 +1,10 @@
-package com.example.todomvvm;
+package com.example.todoassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.todomvvm.ui.todo.TodoFragment;
+import com.example.todoassignment.ui.todo.TodoFragment;
 
 public class TodoActivity extends AppCompatActivity {
 

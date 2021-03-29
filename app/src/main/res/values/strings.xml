@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">TodoMVVM</string>
     <string name="no_todo">No Todo</string>
+
+    <string name="enter_title">Enter title</string>
+    <string name="title_label">Title</string>
+    <string name="desc_label">Description</string>
+    <string name="enter_description">Enter description</string>
+    <string name="submit">Submit</string>
+    <string name="priority_label">Priority</string>
+    <string name="tasks_header">Tasks</string>
+    <string name="due_date">Due Date</string>
+    <string name="set_date">set date</string>
+    <string name="priority_prompt">Priority</string>
+    <string-array name="priority_option">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+
+    <string name="high_priority">High</string>
+    <string name="med_priority">Medium</string>
+    <string name="low_priority">Low</string>
+
+    <string name="update_button">Update</string>
 </resources>

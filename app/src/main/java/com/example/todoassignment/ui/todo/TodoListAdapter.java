@@ -1,4 +1,4 @@
-package com.example.todomvvm.ui.todo;
+package com.example.todoassignment.ui.todo;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.todomvvm.R;
-import com.example.todomvvm.database.Todo;
+import com.example.todoassignment.R;
+import com.example.todoassignment.database.Todo;
 
 import java.util.List;
 

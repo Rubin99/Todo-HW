@@ -1,4 +1,4 @@
-package com.example.todomvvm;
+package com.example.todoassignment;
 
 import org.junit.Test;
 

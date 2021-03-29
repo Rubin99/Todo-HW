@@ -1,4 +1,4 @@
-package com.example.todomvvm.ui.todo;
+package com.example.todoassignment.ui.todo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.todomvvm.R;
-import com.example.todomvvm.database.Todo;
+import com.example.todoassignment.R;
+import com.example.todoassignment.database.Todo;
 
 import java.util.List;
 
