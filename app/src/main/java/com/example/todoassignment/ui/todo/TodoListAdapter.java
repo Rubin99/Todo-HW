@@ -1,11 +1,13 @@
 package com.example.todoassignment.ui.todo;
 
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todoassignment.R;
@@ -18,11 +20,13 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
     class TodoViewHolder extends RecyclerView.ViewHolder {
         private final TextView todoItemView;
         private final TextView todoDescView;
+        private TextView priorityView;
 
         private TodoViewHolder(View itemView) {
             super(itemView);
             todoItemView = itemView.findViewById(R.id.title_tv);
             todoDescView = itemView.findViewById(R.id.description_tv);
+            priorityView = itemView.findViewById(R.id.priorityTextView);
         }
     }
 
@@ -40,16 +44,25 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
         return new TodoViewHolder(itemView);
     }
 
+
+    // Display tasks and description ...
     @Override
     public void onBindViewHolder(@NonNull TodoViewHolder holder, int position) {
+
         if (mTodos != null) {
             Todo current = mTodos.get(position);
             holder.todoItemView.setText(current.getTitle());
+            holder.todoDescView.setText(current.getDescription());
+
         } else {
             // Covers the case of data not being ready yet.
             holder.todoItemView.setText(R.string.no_todo);
+            holder.todoDescView.setText("No Description");
         }
+
+
     }
+
 
     void setTodos(List<Todo> todos){
         mTodos = todos;

@@ -24,7 +24,7 @@ public class TodoViewModel extends AndroidViewModel {
     public TodoViewModel(@NonNull Application application) {
         super(application);
         mRepository = new TodoRepository(application);
-        mTodos = mRepository.getTodos();
+        mTodos = mRepository.getAllTask();
     }
 
     LiveData<List<Todo>> getTodos() {

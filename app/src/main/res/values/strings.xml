@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TodoMVVM</string>
     <string name="no_todo">No Todo</string>
+    <string name="no_desc">No Desc</string>
 
     <string name="enter_title">Enter title</string>
     <string name="title_label">Title</string>

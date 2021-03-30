@@ -3,6 +3,7 @@ package com.example.todoassignment.database;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
@@ -21,35 +22,69 @@ import java.util.Date;
 @Entity(tableName = "todo_table")
 public class Todo {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(name = "title")
-    private String mTitle;
-    private String mDetail;
-    private int mPriority;
-    //private Date setDate;
-    
-    public Todo(@NonNull String title, String detail, int priority) {
-        this.mTitle = title;
-        this.mDetail = detail;
-        this.mPriority = priority;
-        //this.setDate = date;
+    private int id;
+    @NonNull
+    private  String title;
+    private String description;
+    private int priority;
+   /* @ColumnInfo(name = "created date")
+    private Date createdDate;*/
+
+    public Todo(String title, String description, int priority) { //, Date createdDate
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        //this.createdDate = createdDate;
     }
+
+    @Ignore
+    public Todo(int id, String title, String description, int priority, Date createdDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        //this.createdDate = createdDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getTitle() {
-        return this.mTitle;
+        return title;
     }
 
-    String getDetail() {
-        return this.mDetail;
-    }
-    void setDetail(String mDetail) {
-        this.mDetail = mDetail;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    int getPriority() {return this.mPriority;}
-    void setmPriority(int mPriority) { this.mPriority = mPriority;}
+    public String getDescription() {
+        return description;
+    }
 
-    //Date getSetDat(){ return this.setDate;}
-   // void setSetDate(Date setDate) { this.setDate = setDate;}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    /*public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }*/
 }
