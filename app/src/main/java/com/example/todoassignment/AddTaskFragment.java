@@ -15,6 +15,7 @@ import android.widget.RadioGroup;
 
 import com.example.todoassignment.database.Todo;
 import com.example.todoassignment.database.TodoRepository;
+import com.example.todoassignment.ui.todo.TodoFragment;
 import com.example.todoassignment.ui.todo.TodoListAdapter;
 
 import java.util.Date;
@@ -41,6 +42,10 @@ public class AddTaskFragment extends Fragment {
     private Button submitButton;
     private TodoRepository repository;
 
+    public static final int PRIORITY_HIGH = 1;
+    public static final int PRIORITY_MEDIUM = 2;
+    public static final int PRIORITY_LOW = 3;
+
     // TODO: Rename and change types and number of parameters
     public static AddTaskFragment newInstance() {
         return new AddTaskFragment();
@@ -66,7 +71,7 @@ public class AddTaskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view;
+        final View view;
         view = inflater.inflate(R.layout.fragment_add_task, container, false);
 
         titleEditTExt = (EditText) view.findViewById(R.id.title_entry);
@@ -74,17 +79,52 @@ public class AddTaskFragment extends Fragment {
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         submitButton = (Button) view.findViewById(R.id.submit_btn);
 
+        repository = new TodoRepository(getActivity().getApplication());
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = titleEditTExt.getText().toString();
                 String desc = descEditText.getText().toString();
-                Todo todo = new Todo(title, desc, 1);
+                int priority = getPriorityFromViews();
+                Todo todo = new Todo(title, desc, priority);
                 repository.insert(todo);
-                //finish();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, TodoFragment.newInstance())
+                        .commitNow();
+            }
+
+            private int getPriorityFromViews() {
+                int priority = 1;
+                int checkedId = ((RadioGroup) view.findViewById(R.id.radioGroup)).getCheckedRadioButtonId(); //Made view final
+
+                switch (checkedId) {
+                    case R.id.radButton1:
+                        priority = PRIORITY_HIGH;
+                        break;
+                    case R.id.radButton2:
+                        priority = PRIORITY_MEDIUM;
+                        break;
+                    case R.id.radButton3:
+                        priority = PRIORITY_LOW;
+                        break;
+                }
+                return priority;
+            }
+            private void setPriorityInViews(int priority) {
+                switch (priority) {
+                    case PRIORITY_HIGH:
+                        ((RadioGroup) view.findViewById(R.id.radioGroup)).check(R.id.radButton1);
+                        break;
+                    case PRIORITY_MEDIUM:
+                        ((RadioGroup) view.findViewById(R.id.radioGroup)).check(R.id.radButton2);
+                        break;
+                    case PRIORITY_LOW:
+                        ((RadioGroup) view.findViewById(R.id.radioGroup)).check(R.id.radButton3);
+                }
+
             }
         });
-
 
 
         return view;

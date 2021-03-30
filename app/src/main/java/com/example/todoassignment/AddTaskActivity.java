@@ -13,7 +13,7 @@ public class AddTaskActivity extends AppCompatActivity {
         setContentView(R.layout.add_task_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container2, AddTaskFragment.newInstance())
+                    .replace(R.id.container, AddTaskFragment.newInstance())
                     .commitNow();
         }
     }
