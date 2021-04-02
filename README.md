@@ -1,5 +1,10 @@
 # Mobile App Assignment - To-do App
 
+# Important:
+### For some reason when cloning this project there is a problem with the Todo class, as it changes its name to "todo".<br/>
+### To fix this, simply rename the "todo" class to "Todo" in the database folder.
+![error_fix](https://user-images.githubusercontent.com/41099034/113434225-4a285480-9400-11eb-8981-0fa8d3d77239.gif)
+
 ## References
 To complete this project the following projects were refered. 
 Projects provided from teacher:<br/>
