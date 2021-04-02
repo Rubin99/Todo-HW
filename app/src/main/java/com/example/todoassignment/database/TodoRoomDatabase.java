@@ -46,17 +46,6 @@ public abstract class TodoRoomDatabase extends RoomDatabase{
 
             TodoDao dao = INSTANCE.todoDao();
 
-           /* TodoRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    TodoDao.deleteAll();
-                    Todo todo = new Todo("title", "description", 1, new Date());
-                    dao.insert(todo);
-                    todo = new Todo("title1", "description1", 2, new Date());
-                    dao.insert(todo);
-                }
-            });*/
-
         }
         @Override
         public void  onOpen(@NonNull SupportSQLiteDatabase db){

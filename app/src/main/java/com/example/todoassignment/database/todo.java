@@ -6,21 +6,15 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * A basic class representing a one-column todo_database table.
- *
- * @ Entity - You must annotate the class as an entity and supply a table name if not class name.
- * @ PrimaryKey - You must identify the primary key.
- * @ ColumnInfo - You must supply the column name if it is different from the variable name.
- *
- * See the documentation for the full set of annotations.
- * https://developer.android.com/topic/libraries/architecture/room.html
  */
 
 @Entity(tableName = "todo_table")
-public class Todo {
+public class Todo implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -29,23 +23,22 @@ public class Todo {
     private  String title;
     private String description;
     private int priority;
-   /* @ColumnInfo(name = "created date")
-    private Date createdDate;*/
+    private String date;
 
-    public Todo(String title, String description, int priority) { //, Date createdDate
+    public Todo(String title, String description, int priority, String date) { //, Date createdDate
         this.title = title;
         this.description = description;
         this.priority = priority;
-        //this.createdDate = createdDate;
+        this.date = date;
     }
 
     @Ignore
-    public Todo(int id, String title, String description, int priority, Date createdDate) {
+    public Todo(int id, String title, String description, int priority) { //, Date createdDate, String date
         this.id = id;
         this.title = title;
         this.description = description;
         this.priority = priority;
-        //this.createdDate = createdDate;
+        //this.date = date;
     }
 
     public int getId() {
@@ -80,11 +73,11 @@ public class Todo {
         this.priority = priority;
     }
 
-    /*public Date getCreatedDate() {
-        return createdDate;
+    public String getDate() {
+        return date;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }*/
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

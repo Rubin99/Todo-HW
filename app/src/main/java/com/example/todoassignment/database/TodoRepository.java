@@ -61,5 +61,13 @@ public class TodoRepository {
             }
         });
     }
+    public void delete(final Todo todo){
+        TodoRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                dao.delete(todo);
+            }
+        });
+    }
 
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TodoViewModel extends AndroidViewModel {
 
-    private TodoRepository mRepository;
+    private static TodoRepository mRepository;
 
     // Using LiveData and caching what getTodos returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the
@@ -33,6 +33,12 @@ public class TodoViewModel extends AndroidViewModel {
 
     public void insert(Todo todo) {
         mRepository.insert(todo);
+    }
+    public void update(Todo todo) {
+        mRepository.update(todo);
+    }
+    public static void delete(Todo todo){
+        mRepository.delete(todo);
     }
 
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TodoMVVM</string>
+    <string name="app_name">To-do App</string>
     <string name="no_todo">No Todo</string>
     <string name="no_desc">No Desc</string>
 
@@ -11,7 +11,7 @@
     <string name="priority_label">Priority</string>
     <string name="tasks_header">Tasks</string>
     <string name="due_date">Due Date</string>
-    <string name="set_date">set date</string>
+    <string name="set_date">Set date</string>
     <string name="priority_prompt">Priority</string>
     <string-array name="priority_option">
         <item>High</item>
@@ -26,4 +26,13 @@
     <string name="update_button">Update</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update">Update</string>
+    <string name="menu_delete_all">Delete All</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_sort_by">Sort By</string>
+    <string name="highest_to_lowest">Highest to Lowest</string>
+    <string name="tasks">Tasks</string>
+    <string name="toast_fab_message">Add Task</string>
+    <string name="update_task">Update Task</string>
+    <string name="add_task">Add Task</string>
 </resources>

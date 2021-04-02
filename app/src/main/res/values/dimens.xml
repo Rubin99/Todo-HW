@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="Text_Size">24sp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="update_size">28dp</dimen>
+    <dimen name="p_view">22dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="header_size">28sp</dimen>
+    <dimen name="label_size">24sp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="entry_size">18sp</dimen>
+    <dimen name="radio">40dp</dimen>
+    <dimen name="margin_extra_large">72dp</dimen>
+    <dimen name="calendar_img">36dp</dimen>
+</resources>

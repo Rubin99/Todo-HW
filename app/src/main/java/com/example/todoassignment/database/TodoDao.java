@@ -32,7 +32,7 @@ public interface TodoDao {
     void deleteAll();
 
     @Delete
-    void  delete(Todo todo);
+    public void  delete(Todo todo);
 
     @Update
     void  update(Todo todo);

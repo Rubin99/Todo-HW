@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/delete_all"
+        android:title="@string/menu_delete_all"
+        android:icon = "@drawable/ic_baseline_delete_sweep_24"
+        />
+    <item
+        android:id="@+id/share"
+        android:title="@string/menu_share"/>
+
+    <!--<item
+        android:id="@+id/sort_by"
+        android:title="@string/menu_sort_by">
+
+        <menu>
+            <item
+            android:id="@+id/sort_by_high_low"
+            android:title="@string/highest_to_lowest"/>
+            <item
+                android:id="@+id/sort_by_low_high"
+                android:title="Lowest To Highest"/>
+        </menu>
+
+    </item>-->
+</menu>
